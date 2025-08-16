@@ -1,7 +1,15 @@
 #!/usr/bin/php
 <?php
 
+/* TL;DR
+
+just add this line to the end of your script:
+
+set_error_handler( function( $err_n, $err_str, $err_file, $err_line ){ throw new ErrorException( $err_str, $err_n, $err_n, $err_file, $err_line ); } );
+
+*/
 /*
+
 The idea is to prevent coding with the happy path style
 Most php functions return certain value when an error ocurred
 instead of the expected value
